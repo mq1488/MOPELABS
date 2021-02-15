@@ -1,21 +1,24 @@
 Виконав:
- студент групи ІО-91
- Коноплін  І. В
- Залікова книжка № 9117
- Варінт №14
- Перевірив Регіда П. Г.
+- студент групи ІО-91
+- Коноплін  І. В
+- Залікова книжка № 9117
+- Варінт №14
+- Перевірив Регіда П. Г.
 
 
 Варіант:
 [![image.png](https://i.postimg.cc/SsGNpbdB/image.png)](https://postimg.cc/LYnMz7rD)
 
 
-[![image.png](https://i.postimg.cc/v8zDJfS4/image.png)](https://postimg.cc/NLKgT9tt)
- a0 = 2
- a1 = 3
- a2 = 2 
- a3 = 1
- Yэт = 74,5
+[![image.png](https://i.postimg.cc/v8zDJfS4/image.png)](https://postimg.cc/NLKgT9tt) 
+ 
+
+Розрахунок:
+-a0 = 2 
+-a1 = 3 
+-a2 = 2  
+-a3 = 1 
+-Yэт = 74,5 
 
 [![image.png](https://i.postimg.cc/02j5h3w4/image.png)](https://postimg.cc/SJ0pMgVL)
 
