@@ -24,7 +24,8 @@ print("X3: " + str(X3) + '\n')
 
 
 Y = [a0 + a1*X1[i] + a2*X2[i] + a3*X3[i] for i in range(8)]
-print("Y: " + str(Y) + '\n')
+print("Y: " + str(Y))
+print('Max Y = ' + str(max(Y))+ '\n')
 
 
 
