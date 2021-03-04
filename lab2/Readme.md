@@ -5,7 +5,12 @@
 - Варінт №13
 - Перевірив Регіда П. Г.
 
+Варіант:
+![Run1](/Lab2/Screenshot_2.png)
 
+Результати:
+![Run1](/Lab2/Screenshot_3.png)
+![Run1](/Lab2/Screenshot_4.png)
 
  
 
