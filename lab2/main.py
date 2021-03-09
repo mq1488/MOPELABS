@@ -17,9 +17,14 @@ x1Max, x1MaxNorm = 30, 1
 x2Min, x2MinNorm = 5, -1
 x2Max, x2MaxNorm = 40, 1
 
+
+
+
 Experiments = 5
 
+
 yArray = [[random.randint(minYlimit, maxYlimit) for i in range(Experiments)] for j in range(3)]
+
 averArrayY = [sum(yArray[i][j] for j in range(Experiments)) / Experiments for i in range(3)]
 
 for i in range(0,3):
@@ -124,8 +129,8 @@ print('Натуралізація коефіцієнтів: ' + '\n' + 'dX1: ' +
 print('aa0: ' + str(aa0) + '\naa1: ' + str(aa1) + '\naa2: ' + str(aa2) + '\n')
 
 
-
-def odnoridna_dispersion():
+def odnoridna_dispersion(Experements):
+    global rUV1,rUV2,rUV3,rkrTable
     m = min(rkrTable, key=lambda x: abs(x - Experiments))
     p = 0
     for ruv in (rUV1, rUV2, rUV3):
@@ -136,7 +141,14 @@ def odnoridna_dispersion():
                 p = rkr
     return pList[p]
 
-print("Однорідна дисперсія:",odnoridna_dispersion())
+
+if not odnoridna_dispersion(Experiments):
+    print('Дисперсія неоднорідна, збілушуемо кількість дослідів')
+    Experiments += 1
+    odnoridna_dispersion(Experiments)
+else:
+    print("Однорідна дисперсія:", odnoridna_dispersion(Experiments))
+
 print('\n')
 
 def naturalized_regression(x1, x2):
