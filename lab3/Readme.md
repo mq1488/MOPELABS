@@ -6,8 +6,8 @@
 - Перевірив Регіда П. Г.
 
 Варіант:
-![Run1](/lab2/Screenshot_2.png)
+![Run1](/lab3/Screenshot_2.png)
 
 Результати:
 При умові m=4, N=4
-![Run1](/lab2/Screenshot_3.png)
+![Run1](/lab3/Screenshot_3.png)
