@@ -178,7 +178,7 @@ def main(n, m):
     F_p = fisherTest(y, y_aver, y_new, n, m, d)
 
     fisher = partial(f.ppf, q=1 - 0.05)
-    f_t = fisher(dfn=f4, dfd=f3)  # табличне знач
+    f_t = fisher(dfn=f4, dfd=f3)  
 
     print('\nПеревірка адекватності за критерієм Фішера')
     print('Fp =', F_p)
