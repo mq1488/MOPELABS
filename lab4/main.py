@@ -4,7 +4,8 @@ import sklearn.linear_model as lm
 from scipy.stats import f, t
 from numpy.linalg import solve
 
-def planing_matrix_interaction_effect(n, m):
+
+def planing_matrix(n, m):
     x_normalized = [[1, -1, -1, -1],
                     [1, -1, 1, 1],
                     [1, 1, -1, 1],
@@ -61,8 +62,6 @@ def dispersion(y, y_aver, n, m):
         s = sum([(y_aver[i] - y[i][j]) ** 2 for j in range(m)]) / m
         res.append(round(s, 3))
     return res
-
-
 
 
 def find_coef(X, Y, norm=False):
@@ -184,7 +183,7 @@ def check(X, Y, B, n, m, norm=False):
 
 
 def with_interaction_effect(n, m):
-    X, Y, X_norm = planing_matrix_interaction_effect(n, m)
+    X, Y, X_norm = planing_matrix(n, m)
 
     y_aver = [round(sum(i) / len(i), 3) for i in Y]
 
@@ -330,4 +329,6 @@ if __name__ == '__main__':
     y_max = 200 + int(sum([x[1] for x in x_range]) / 3)
     y_min = 200 + int(sum([x[0] for x in x_range]) / 3)
 
-    main(8, 3)
+    n = 8
+    m = 3
+    main(n, m)
