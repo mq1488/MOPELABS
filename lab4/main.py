@@ -153,6 +153,13 @@ def check(X, Y, B, n, m, norm=False):
     print('\nКоефіцієнти {} статистично незначущі, тому ми виключаємо їх з рівняння.'.format(
         [round(i, 3) for i in B if i not in final_k]))
 
+
+    if len(res) < len(final_k):
+        print("Кількість значимих коефіцієнтів менша за кількість незначимих коефіцієнтів")
+        print("Модель неадекватна\n")
+    else:
+        print("Кількість значимих коефіцієнтів більша  за кількість незначимих коефіцієнтів")
+
     y_new = []
     for j in range(n):
         y_new.append(regression([X[j][i] for i in range(len(ts)) if ts[i] in res], final_k))
@@ -304,6 +311,7 @@ def linear(n, m):
     Fp = kriteriy_fishera(y, y_average, y_new, n, m, d, dispersion_arr)
     Ft = f.ppf(dfn=f4, dfd=f3, q=1 - 0.05)
 
+
     print('\nПеревірка адекватності за критерієм Фішера:\n')
     print('Розрахункове значення критерія Фішера: Fp =', Fp)
     print('Табличне значення критерія Фішера: Ft =', Ft)
@@ -313,6 +321,7 @@ def linear(n, m):
     else:
         print('Математична модель не адекватна експериментальним даним')
         return False
+
 
 
 def main(n, m):
