@@ -1,6 +1,19 @@
 from math import fabs, sqrt
 import time
 
+
+
+
+def timer(func):
+    def wrap(*args, **kwargs):
+        t1 = time.time()
+        result = func(*args, **kwargs)
+        t2 = time.time()
+        print(f'Метод {func.__name__!r} виконався за {(t2 - t1):.7f}s')
+        return result
+
+    return wrap_func
+
 m = 2
 p = 0.95
 N = 15
@@ -27,6 +40,7 @@ f3 = None
 
 
 class Perevirku:
+    @timer
     def get_cohren_value(size_of_selections, qty_of_selections, significance):
         from _pydecimal import Decimal
         from scipy.stats import f
@@ -36,12 +50,14 @@ class Perevirku:
         fisher = f.isf(*params)
         result = fisher / (fisher + (size_of_selections - 1 - 1))
         return Decimal(result).quantize(Decimal('.0001')).__float__()
-
+       
+    @timer
     def get_student_value(f3, significance):
         from _pydecimal import Decimal
         from scipy.stats import t
         return Decimal(abs(t.ppf(significance / 2, f3))).quantize(Decimal('.0001')).__float__()
-
+    
+    @timer
     def get_fisher_value(f3, f4, significance):
         from _pydecimal import Decimal
         from scipy.stats import f
